@@ -1,8 +1,8 @@
 
 const mongoose = require("mongoose")
 
-
-//2. Connect to a database
+const User = require("./User")
+//1. Connect to a database
 const mongoURI = "mongodb://localhost:27017";
 async function connectToMongo() {
   try {
@@ -16,3 +16,4 @@ async function connectToMongo() {
 }
 
 connectToMongo()
+
