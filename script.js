@@ -16,10 +16,15 @@ async function connectToMongo() {
     }
 }
 
-connectToMongo()
+async function run() {
+    //Create a new user and add them to the database
+    // const user = new User({ name: "Logan", age: 40 });
+    // user.save();
 
-//Create a user
-const user = new User({name: "Kyle", age: 26})
+    //Alternative way to create a user
+    const user = await User.create({name: "John", age: 22})
+}
 
-//Add user to database
-user.save()
+
+//Connect to mongo first. Then add new user. Make sure it is not run().
+connectToMongo().then(run);

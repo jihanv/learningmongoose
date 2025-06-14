@@ -4,7 +4,10 @@ const mongoose = require("mongoose")
 
 //Define Schema
 const userSchema = new mongoose.Schema({
-    name: String,
+    name:{
+        type: String,
+        required: true
+    },
     age: Number,
     gpa: Number
 })
